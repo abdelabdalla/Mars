@@ -1,4 +1,8 @@
-package net.ddns.sabr.mars;/**/
+package net.ddns.sabr.mars;
+
+/*
+*Copyright 2016 Abdel-Rahim Abdalla
+*/
 
 import android.content.Context;
 import android.content.Intent;

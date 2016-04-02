@@ -1,5 +1,10 @@
 package net.ddns.sabr.mars;
 
+/*
+*Copyright 2016 Abdel-Rahim Abdalla
+*/
+
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
