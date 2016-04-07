@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Janus</string>
+
+    <string-array name="groups">
+        <item>RAF Recruits</item>
+        <item>Army Recruits</item>
+        <item>RAF Advanced</item>
+        <item>Army Advanced</item>
+        <item>REME</item>
+        <item>Signals</item>
+    </string-array>
+</resources>

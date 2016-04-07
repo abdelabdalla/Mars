@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Mars.iml" filepath="$PROJECT_DIR$/Mars.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/janus/vulcan.iml" filepath="$PROJECT_DIR$/janus/vulcan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mars/mars.iml" filepath="$PROJECT_DIR$/mars/mars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/session/session.iml" filepath="$PROJECT_DIR$/session/session.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vulcan/vulcan.iml" filepath="$PROJECT_DIR$/vulcan/vulcan.iml" />
     </modules>
   </component>
 </project>

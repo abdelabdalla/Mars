@@ -1,1 +1,1 @@
-include ':app', ':backend'
+include ':mars', ':backend', ':session', ':janus', ':vulcan'
