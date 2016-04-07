@@ -29,8 +29,11 @@ public class DateFragment extends DialogFragment implements DatePickerDialog.OnD
 
     @Override
     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-        ((MainActivity)getActivity()).session.date = dayOfMonth + "/" + monthOfYear + "/" + year;
-        ((MainActivity)getActivity()).dateButton.setText(dayOfMonth + "/" + monthOfYear + "/" + year);
+
+        String date = dayOfMonth + "/" + monthOfYear + "/" + year;
+
+        ((MainActivity)getActivity()).session.date = date;
+        ((MainActivity)getActivity()).dateButton.setText(date);
         //dismiss();
     }
 

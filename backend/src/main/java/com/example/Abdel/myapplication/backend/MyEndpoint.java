@@ -26,7 +26,7 @@ import com.google.api.server.spi.config.Named;
 )
 public class MyEndpoint {
 
-    public String json/* = "{\n" +
+    private String json/* = "{\n" +
             "  \"date\":\"31/3/2016\",\n" +
             "  \"entries\":[\n" +
             "    [\"RAF Recruits\",\"Blues\",\"Sgt T Hard\",\"MRAF Cox\",\"Drill\"],\n" +

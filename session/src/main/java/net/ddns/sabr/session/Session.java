@@ -3,7 +3,7 @@ package net.ddns.sabr.session;
 public class Session {
 
     public String date;
-    public String[][] entries;
+    public final String[][] entries;
 
     public Session(String date, String[][] entries){
         this.date = date;

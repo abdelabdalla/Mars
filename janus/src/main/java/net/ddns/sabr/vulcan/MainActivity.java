@@ -25,19 +25,17 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity{
 
-    Session session = new Session();
+    final Session session = new Session();
 
-    int pos = 0;
+    private int pos = 0;
 
     Button dateButton;
-    Button uploadButton;
-    Spinner spinner;
-    TextView ncoView;
-    TextView officerView;
-    TextView uniformView;
-    TextView notesView;
+    private TextView ncoView;
+    private TextView officerView;
+    private TextView uniformView;
+    private TextView notesView;
 
-    String json;
+    private String json;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +43,14 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
         dateButton = (Button) findViewById(R.id.dateButton);
-        uploadButton = (Button) findViewById(R.id.uploadButton);
+        Button uploadButton = (Button) findViewById(R.id.uploadButton);
         ncoView = (TextView) findViewById(R.id.ncoView);
         officerView = (TextView) findViewById(R.id.officerView);
         uniformView = (TextView) findViewById(R.id.uniformView);
         notesView = (TextView) findViewById(R.id.notesView);
 
 
-        spinner = (Spinner) findViewById(R.id.spinner);
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.groups, android.R.layout.simple_spinner_item);
 
