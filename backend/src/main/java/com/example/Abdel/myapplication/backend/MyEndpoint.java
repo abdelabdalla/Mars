@@ -15,6 +15,10 @@ import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.Named;
 
+import net.ddns.sabr.marssupport.Item;
+
+import java.util.ArrayList;
+
 @Api(
   name = "myApi",
   version = "v1",
@@ -26,7 +30,33 @@ import com.google.api.server.spi.config.Named;
 )
 public class MyEndpoint {
 
-    private String json/* = "{\n" +
+    private String json;
+
+    private ArrayList<Item> items = new ArrayList<>();
+
+    @ApiMethod(name = "download")
+    public Bean download() {
+        Bean response = new Bean();
+        response.setData(json);
+        return response;
+    }
+
+    @ApiMethod(name = "upload")
+    public Bean upload(@Named("string") String string){
+        Bean response = new Bean();
+        json = string;
+        response.setData("done");
+        return response;
+    }
+
+    @ApiMethod(name = "order")
+    public Bean order(ArrayList items){
+        Bean response = new Bean();
+
+        return response;
+    }
+
+    /* = "{\n" +
             "  \"date\":\"31/3/2016\",\n" +
             "  \"entries\":[\n" +
             "    [\"RAF Recruits\",\"Blues\",\"Sgt T Hard\",\"MRAF Cox\",\"Drill\"],\n" +
@@ -36,23 +66,6 @@ public class MyEndpoint {
             "    [\"REME\",\"Blues/MTP\",\"SSgt N V Keen\",\"5Lt Dorris\",\"Presentations with Cpl A Awesome\"],\n" +
             "    [\"Signals\",\"Blues/MTP\",\"Cpl V Keen\",\"MRAF Cox\",\"Do something useless as usual\"]\n" +
             "    ]\n" +
-            "}"*/;
-
-
-
-    @ApiMethod(name = "download")
-    public MyBean download() {
-        MyBean response = new MyBean();
-        response.setData(json);
-        return response;
-    }
-
-    @ApiMethod(name = "upload")
-    public MyBean upload(@Named("string") String string){
-        MyBean response = new MyBean();
-        json = string;
-        response.setData("done");
-        return response;
-    }
+            "}"*/
 
 }

@@ -19,7 +19,7 @@ import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.gson.Gson;
 
-import net.ddns.sabr.session.Session;
+import net.ddns.sabr.marssupport.Session;
 
 import java.io.IOException;
 
@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        assert uploadButton != null;
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

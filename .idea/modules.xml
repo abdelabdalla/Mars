@@ -4,10 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Mars.iml" filepath="$PROJECT_DIR$/Mars.iml" />
       <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/janus/vulcan.iml" filepath="$PROJECT_DIR$/janus/vulcan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/janus/janus.iml" filepath="$PROJECT_DIR$/janus/janus.iml" />
       <module fileurl="file://$PROJECT_DIR$/mars/mars.iml" filepath="$PROJECT_DIR$/mars/mars.iml" />
-      <module fileurl="file://$PROJECT_DIR$/session/session.iml" filepath="$PROJECT_DIR$/session/session.iml" />
+      <module fileurl="file://$PROJECT_DIR$/support/session.iml" filepath="$PROJECT_DIR$/support/session.iml" />
+      <module fileurl="file://$PROJECT_DIR$/support/support.iml" filepath="$PROJECT_DIR$/support/support.iml" />
       <module fileurl="file://$PROJECT_DIR$/vulcan/vulcan.iml" filepath="$PROJECT_DIR$/vulcan/vulcan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/janus/vulcan.iml" filepath="$PROJECT_DIR$/janus/vulcan.iml" />
     </modules>
   </component>
 </project>

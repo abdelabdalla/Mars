@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 
 import com.google.gson.Gson;
 
-import net.ddns.sabr.session.Session;
+import net.ddns.sabr.marssupport.Session;
 
 import java.util.ArrayList;
 import java.util.Arrays;

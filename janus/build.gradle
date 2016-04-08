@@ -22,7 +22,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile project(':session')
+    compile project(':support')
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.google.code.gson:gson:2.6.1'
     compile project(path: ':backend', configuration: 'android-endpoints')

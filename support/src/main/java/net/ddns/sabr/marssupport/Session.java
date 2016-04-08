@@ -1,4 +1,4 @@
-package net.ddns.sabr.session;
+package net.ddns.sabr.marssupport;
 
 public class Session {
 

@@ -13,7 +13,7 @@
             <option value="$PROJECT_DIR$/backend" />
             <option value="$PROJECT_DIR$/janus" />
             <option value="$PROJECT_DIR$/mars" />
-            <option value="$PROJECT_DIR$/session" />
+            <option value="$PROJECT_DIR$/support" />
             <option value="$PROJECT_DIR$/vulcan" />
           </set>
         </option>
@@ -23,7 +23,7 @@
             <option value="$PROJECT_DIR$/backend" />
             <option value="$PROJECT_DIR$/janus" />
             <option value="$PROJECT_DIR$/mars" />
-            <option value="$PROJECT_DIR$/session" />
+            <option value="$PROJECT_DIR$/support" />
             <option value="$PROJECT_DIR$/vulcan" />
           </set>
         </option>
