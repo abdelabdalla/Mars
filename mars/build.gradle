@@ -4,10 +4,6 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
-    repositories {
-        maven { url "https://jitpack.io" }
-    }
-
     defaultConfig {
         applicationId "net.ddns.sabr.mars"
         minSdkVersion 18
@@ -21,6 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    repositories {
+        maven {
+            url "https://maven.java.net/content/groups/public/"
+        }
+    }
 }
 
 dependencies {
@@ -32,6 +33,7 @@ dependencies {
     compile 'com.android.support:cardview-v7:23.3.0'
     compile 'com.android.support:recyclerview-v7:23.3.0'
     compile 'com.google.code.gson:gson:2.6.1'
-    compile 'com.github.yesidlazaro:GmailBackground:1.1'
+    compile 'com.sun.mail:android-mail:1.5.5'
+    compile 'com.sun.mail:android-activation:1.5.5'
     compile project(path: ':backend', configuration: 'android-endpoints')
 }

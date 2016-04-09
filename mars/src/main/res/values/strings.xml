@@ -5,4 +5,13 @@
         <item>RAF</item>
         <item>Army</item>
     </string-array>
+    <string-array name="ranks">
+        <item>Rct</item>
+        <item>Cdt</item>
+        <item>L Cpl</item>
+        <item>Cpl</item>
+        <item>Sgt</item>
+        <item>F/S Sgt</item>
+        <item>CSM/CWO</item>
+    </string-array>
 </resources>
