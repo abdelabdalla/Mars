@@ -127,17 +127,18 @@ public class MainActivity extends AppCompatActivity{
             context = params[0];
 
             try {
-/*                json = "{\n" +
-                        "  \"date\":\"31/3/2016\",\n" +
-                        "  \"entries\":[\n" +
-                        "    [\"RAF Recruits\",\"Blues\",\"Sgt T Hard\",\"MRAF Cox\",\"Drill\"],\n" +
-                        "    [\"Army Recruits\",\"MTP\",\"CSM D Sack\",\"5Lt Dorris\",\"Drill\"],\n" +
-                        "    [\"RAF Advanced\",\"Blues\",\"LCpl No '1' Cares\",\"MRAF Cox\",\"U5Ltilearn Stuff. In e4\"],\n" +
-                        "    [\"Army Advanced\",\"MTP\",\"FSgt L Brioche\",\"5Lt Dorris\",\"Wait for LSW's\"],\n" +
-                        "    [\"REME\",\"Blues/MTP\",\"SSgt N V Keen\",\"5Lt Dorris\",\"Presentations with Cpl A Awesome\"],\n" +
-                        "    [\"Signals\",\"Blues/MTP\",\"Cpl V Keen\",\"MRAF Cox\",\"Do something useless as usual\"]\n" +
+                json = "{\n" +
+                        "  \"date\": \"14/4/2016\",\n" +
+                        "  \"entries\": [\n" +
+                        "    [\n" +
+                        "      \"RAF Field Day\",\n" +
+                        "      \" \",\n" +
+                        "      \"Blues\",\n" +
+                        "      \"No CCF due to this event\",\n" +
+                        "      \" \"\n" +
                         "    ]\n" +
-                        "}";*/
+                        "  ]\n" +
+                        "}";
                 return myApiService.upload(json).execute().getData();
             } catch (IOException e) {
                 return e.getMessage();
@@ -152,5 +153,16 @@ public class MainActivity extends AppCompatActivity{
         }
     }
 
+/*    "{\n" +
+            "  \"date\":\"14/4/2016\",\n" +
+            "  \"entries\":[\n" +
+            "    [\"RAF Recruits\",\"Blues\",\"Sgt T Hard\",\"MRAF Cox\",\"Drill\"],\n" +
+            "    [\"Army Recruits\",\"MTP\",\"CSM D Sack\",\"5Lt Dorris\",\"Drill\"],\n" +
+            "    [\"RAF Advanced\",\"Blues\",\"LCpl No '1' Cares\",\"MRAF Cox\",\"Ultilearn Stuff. In e4\"],\n" +
+            "    [\"Army Advanced\",\"MTP\",\"FSgt L Brioche\",\"5Lt Dorris\",\"Wait for LSW's\"],\n" +
+            "    [\"REME\",\"Blues/MTP\",\"SSgt N V Keen\",\"5Lt Dorris\",\"Presentations with Cpl A Awesome\"],\n" +
+            "    [\"Signals\",\"Blues/MTP\",\"Cpl V Keen\",\"MRAF Cox\",\"Do something useless as usual\"]\n" +
+            "    ]\n" +
+            "}"*/
 
 }

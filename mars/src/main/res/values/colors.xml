@@ -4,4 +4,17 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000000</color>
+
+    <color name="ccfPrimary">#5D8AA8</color>
+    <color name="ccfPrimaryDark">#09007A</color>
+    <color name="ccfAccent">#fe0000</color>
+
+    <color name="rafPrimary">#09007A</color>
+    <color name="rafPrimaryDark">#05004A</color>
+    <color name="rafAccent">#800000</color>
+
+    <color name="armyPrimary">#94A086</color>
+    <color name="armyPrimaryDark">#2A2422</color>
+    <color name="armyAccent">#DED6AA</color>
+
 </resources>

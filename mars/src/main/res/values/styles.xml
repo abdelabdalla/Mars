@@ -8,6 +8,27 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ccfTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/ccfPrimary</item>
+        <item name="colorPrimaryDark">@color/ccfPrimaryDark</item>
+        <item name="colorAccent">@color/ccfAccent</item>
+    </style>
+
+    <style name="rafTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/rafPrimary</item>
+        <item name="colorPrimaryDark">@color/rafPrimaryDark</item>
+        <item name="colorAccent">@color/rafAccent</item>
+    </style>
+
+    <style name="armyTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/armyPrimary</item>
+        <item name="colorPrimaryDark">@color/armyPrimaryDark</item>
+        <item name="colorAccent">@color/armyAccent</item>
+    </style>
+
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/splashscreen</item>
     </style>

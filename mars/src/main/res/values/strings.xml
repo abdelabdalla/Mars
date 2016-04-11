@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mars</string>
+    <string name="app_name">RS CCF</string>
 
     <string-array name="groups">
         <item>RAF</item>

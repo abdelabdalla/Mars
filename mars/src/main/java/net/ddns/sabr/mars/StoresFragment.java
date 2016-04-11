@@ -93,7 +93,7 @@ public class StoresFragment extends Fragment {
                 Message message = new MimeMessage(session);
                 message.setFrom(new InternetAddress(a[0]));
                 message.setRecipients(Message.RecipientType.TO,
-                        InternetAddress.parse(a[2].equals("0") ? "" : ""));
+                        InternetAddress.parse(a[2].equals("0") ? "abdelabdalla@gmail.com" : "k00729@reading-school.co.uk"));
                 message.setSubject("Stores Order");
                 // Create the message part
                 BodyPart messageBodyPart = new MimeBodyPart();

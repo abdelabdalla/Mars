@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private String json = "";
     private String date = "";
 
+    private int theme = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         assert toolbar != null;
         toolbar.setTitle(R.string.app_name);
+        setSupportActionBar(toolbar);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);

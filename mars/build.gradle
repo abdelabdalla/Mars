@@ -8,8 +8,8 @@ android {
         applicationId "net.ddns.sabr.mars"
         minSdkVersion 18
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
     }
     buildTypes {
         release {
@@ -17,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     repositories {
         maven {
             url "https://maven.java.net/content/groups/public/"
