@@ -11,7 +11,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.util.Pair;
 
 import com.example.abdel.myapplication.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -62,12 +62,12 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
-    class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
+    class EndpointsAsyncTask extends AsyncTask<Context, Void, Pair<String, String>> {
         private MyApi myApiService = null;
         private Context context;
 
         @Override
-        protected String doInBackground(Context... params) {
+        protected Pair<String, String> doInBackground(Context... params) {
             if (myApiService == null) {
                 MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
                         .setRootUrl("https://reading-school-ccf.appspot.com/_ah/api/");
@@ -76,17 +76,35 @@ public class SplashActivity extends AppCompatActivity {
 
             context = params[0];
             try {
-                return myApiService.download().execute().getData();
+
+                String s = myApiService.download().execute().getData();
+                String sb = myApiService.download().execute().getFile();
+                //byte[] b = Base64.decodeBase64(sb);
+
+                Pair<String, String> pair = new Pair<String, String>(s,sb);
+                return pair;
             } catch (IOException e) {
-                return e.getMessage();
+                Pair<String, String> a = new Pair<>(e.getMessage(),"<!DOCTYPE html>\n" +
+                        "<html>\n" +
+                        "<body>\n" +
+                        "\n" +
+                        "<h1>Something's wrong</h1>\n" +
+                        "\n" +
+                        "<p>My first paragraph.</p>\n" +
+                        "\n" +
+                        "</body>\n" +
+                        "</html>");
+                return a;
             }
         }
 
         @Override
-        protected void onPostExecute(String result) {
-            Log.v("ayyy",result);
+        protected void onPostExecute(Pair<String, String> result) {
+            //Log.v("ayyy", result.second);
             Intent intent = new Intent(context, MainActivity.class);
-            intent.putExtra("json",result);
+            intent.putExtra("json",result.first);
+            String b = result.second;
+            intent.putExtra("file",b);
             startActivity(intent);
             finish();
         }

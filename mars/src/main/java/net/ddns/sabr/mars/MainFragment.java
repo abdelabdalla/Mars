@@ -31,8 +31,9 @@ public class MainFragment extends Fragment {
 
         Gson g = new Gson();
 
-        Session s = g.fromJson(getArguments().getString("json"), Session.class);
+        //Log.v("docs",this.getArguments().getString("json"));
 
+        Session s = g.fromJson(this.getArguments().getString("json"), Session.class);
         ArrayList<String[]> aList = new ArrayList<>(Arrays.asList(s.entries));
         TimetableAdapter timetableAdapter = new TimetableAdapter(aList);
         listView.setAdapter(timetableAdapter);

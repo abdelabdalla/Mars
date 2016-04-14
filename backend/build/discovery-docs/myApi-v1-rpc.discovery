@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/XOnPKBw0TmxBx734eYrxNTYavkw\"",
+ "etag": "\"H01Z-1ikbwOw463Un2bFZHenx1g/1W4HYm1lPXPGOLSQJUdYw7hHGlk\"",
  "discoveryVersion": "v1",
  "id": "myApi:v1",
  "name": "myApi",
@@ -71,21 +71,51 @@
   }
  },
  "schemas": {
-  "MyBean": {
-   "id": "MyBean",
+  "Bean": {
+   "id": "Bean",
    "type": "object",
    "properties": {
     "data": {
+     "type": "string"
+    },
+    "file": {
      "type": "string"
     }
    }
   }
  },
  "methods": {
+  "myApi.addToFile": {
+   "id": "myApi.addToFile",
+   "parameters": {
+    "f": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "f"
+   ],
+   "returns": {
+    "$ref": "Bean"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
   "myApi.download": {
    "id": "myApi.download",
    "returns": {
-    "$ref": "MyBean"
+    "$ref": "Bean"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "myApi.resetFile": {
+   "id": "myApi.resetFile",
+   "returns": {
+    "$ref": "Bean"
    },
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"
@@ -103,7 +133,7 @@
     "string"
    ],
    "returns": {
-    "$ref": "MyBean"
+    "$ref": "Bean"
    },
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"

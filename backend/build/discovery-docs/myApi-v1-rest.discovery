@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/XOnPKBw0TmxBx734eYrxNTYavkw\"",
+ "etag": "\"H01Z-1ikbwOw463Un2bFZHenx1g/1W4HYm1lPXPGOLSQJUdYw7hHGlk\"",
  "discoveryVersion": "v1",
  "id": "myApi:v1",
  "name": "myApi",
@@ -73,23 +73,58 @@
   }
  },
  "schemas": {
-  "MyBean": {
-   "id": "MyBean",
+  "Bean": {
+   "id": "Bean",
    "type": "object",
    "properties": {
     "data": {
+     "type": "string"
+    },
+    "file": {
      "type": "string"
     }
    }
   }
  },
  "methods": {
+  "addToFile": {
+   "id": "myApi.addToFile",
+   "path": "addToFile/{f}",
+   "httpMethod": "POST",
+   "parameters": {
+    "f": {
+     "type": "string",
+     "required": true,
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "f"
+   ],
+   "response": {
+    "$ref": "Bean"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
   "download": {
    "id": "myApi.download",
    "path": "download",
    "httpMethod": "POST",
    "response": {
-    "$ref": "MyBean"
+    "$ref": "Bean"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "resetFile": {
+   "id": "myApi.resetFile",
+   "path": "resetFile",
+   "httpMethod": "POST",
+   "response": {
+    "$ref": "Bean"
    },
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"
@@ -110,7 +145,7 @@
     "string"
    ],
    "response": {
-    "$ref": "MyBean"
+    "$ref": "Bean"
    },
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"

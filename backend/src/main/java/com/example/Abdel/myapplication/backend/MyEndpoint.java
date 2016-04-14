@@ -30,7 +30,28 @@ import java.util.ArrayList;
 )
 public class MyEndpoint {
 
-    private String json;
+    private String json  = "{\n" +
+            "  \"date\":\"14/4/2016\",\n" +
+            "  \"entries\":[\n" +
+            "    [\"RAF Recruits\",\"Blues\",\"Sgt T Hard\",\"MRAF Cox\",\"Drill\"],\n" +
+            "    [\"Army Recruits\",\"MTP\",\"CSM D Sack\",\"5Lt Dorris\",\"Drill\"],\n" +
+            "    [\"RAF Advanced\",\"Blues\",\"LCpl No '1' Cares\",\"MRAF Cox\",\"Ultilearn Stuff. In e4\"],\n" +
+            "    [\"Army Advanced\",\"MTP\",\"FSgt L Brioche\",\"5Lt Dorris\",\"Wait for LSW's\"],\n" +
+            "    [\"REME\",\"Blues/MTP\",\"SSgt N V Keen\",\"5Lt Dorris\",\"Presentations with Cpl A Awesome\"],\n" +
+            "    [\"Signals\",\"Blues/MTP\",\"Cpl V Keen\",\"MRAF Cox\",\"Do something useless as usual\"]\n" +
+            "    ]\n" +
+            "}";
+
+    private String file = "<!DOCTYPE html>\n" +
+            "<html>\n" +
+            "<body>\n" +
+            "\n" +
+            "<h1>My First Heading</h1>\n" +
+            "\n" +
+            "<p>My first paragraph.</p>\n" +
+            "\n" +
+            "</body>\n" +
+            "</html>";
 
     private ArrayList<Item> items = new ArrayList<>();
 
@@ -38,6 +59,7 @@ public class MyEndpoint {
     public Bean download() {
         Bean response = new Bean();
         response.setData(json);
+        response.setFile(file);
         return response;
     }
 
@@ -49,10 +71,19 @@ public class MyEndpoint {
         return response;
     }
 
-    @ApiMethod(name = "order")
-    public Bean order(ArrayList items){
+    @ApiMethod(name = "resetFile")
+    public Bean resetFile(){
         Bean response = new Bean();
+        file = "";
+        response.setData("done");
+        return response;
+    }
 
+    @ApiMethod(name = "addToFile")
+    public Bean addToFile(@Named("f") String f){
+        Bean response = new Bean();
+        file += f;
+        response.setData("done");
         return response;
     }
 

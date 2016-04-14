@@ -25,8 +25,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String json = "";
-    private String date = "";
+   // private String json = "";
+   // private String date = "";
+    //private String file;
 
     private int theme = 0;
 
@@ -36,15 +37,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent i = getIntent();
-        json = i.getExtras().getString("json");
+        String json = i.getExtras().getString("json");
+        String file = i.getExtras().getString("file");
 
-        Log.v("ayyl",json);
 
         Gson g = new Gson();
 
         Session s = g.fromJson(json, Session.class);
 
-        date = s.date;
+        String date = s.date;
 
         String[] d = date.split("/");
 
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
+        setupViewPager(viewPager,json,file,date);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         assert tabLayout != null;
@@ -66,15 +67,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setupViewPager(ViewPager viewPager) {
+    private void setupViewPager(ViewPager viewPager,String j, String fi, String d) {
         Bundle b = new Bundle();
-        b.putString("json",json);
+        b.putString("json",j);
         MainFragment f = new MainFragment();
         f.setArguments(b);
 
+        Log.v("file",fi);
+        Bundle b2 = new Bundle();
+        b2.putString("file",fi);
+        NewsFragment f2 = new NewsFragment();
+        f2.setArguments(b2);
+
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(f, date);
-        adapter.addFragment(new NewsFragment(), "News");
+        adapter.addFragment(f, d);
+        adapter.addFragment(f2, "News");
         adapter.addFragment(new StoresFragment(), "Stores");
         viewPager.setAdapter(adapter);
     }
