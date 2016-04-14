@@ -81,7 +81,7 @@ public class SplashActivity extends AppCompatActivity {
                 String sb = myApiService.download().execute().getFile();
                 //byte[] b = Base64.decodeBase64(sb);
 
-                Pair<String, String> pair = new Pair<String, String>(s,sb);
+                Pair<String, String> pair = new Pair<>(s, sb);
                 return pair;
             } catch (IOException e) {
                 Pair<String, String> a = new Pair<>(e.getMessage(),"<!DOCTYPE html>\n" +

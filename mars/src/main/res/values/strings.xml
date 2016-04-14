@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">RS CCF</string>
+    <string name="storesman">storesman:</string>
+    <string name="school_id">school id</string>
+    <string name="password">password</string>
+    <string name="full_name">full name</string>
+    <string name="uniform_item">uniform item</string>
+    <string name="qty">qty</string>
+    <string name="reason_for_order">reason for order</string>
+    <string name="order">Order</string>
+    <string name="size">size</string>
+    <string name="preferences">Preferences</string>
 
     <string-array name="groups">
         <item>RAF</item>

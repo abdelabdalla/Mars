@@ -35,7 +35,7 @@ public class NewsFragment extends Fragment{
                 .load();*/
 
         WebView webView = (WebView) root.findViewById(R.id.pdfview);
-        webView.getSettings().setJavaScriptEnabled(true);
+        //webView.getSettings().setJavaScriptEnabled(true);
         String html = getArguments().getString("file");
         webView.loadData(html,"text/html","UTF-8");
 

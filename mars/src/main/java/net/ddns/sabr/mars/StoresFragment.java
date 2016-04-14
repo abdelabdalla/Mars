@@ -71,7 +71,7 @@ public class StoresFragment extends Fragment {
         return root;
     }
 
-    class EmailAsyncTask extends AsyncTask<String[],Void,String>{
+    private class EmailAsyncTask extends AsyncTask<String[],Void,String>{
 
         @Override
         protected String doInBackground(String[]... params) {
@@ -93,7 +93,7 @@ public class StoresFragment extends Fragment {
                 Message message = new MimeMessage(session);
                 message.setFrom(new InternetAddress(a[0]));
                 message.setRecipients(Message.RecipientType.TO,
-                        InternetAddress.parse(a[2].equals("0") ? "abdelabdalla@gmail.com" : "k00729@reading-school.co.uk"));
+                        InternetAddress.parse(a[2].equals("0") ? "k00675@reading-school.co.uk" : "k00682@reading-school.co.uk"));
                 message.setSubject("Stores Order");
                 // Create the message part
                 BodyPart messageBodyPart = new MimeBodyPart();

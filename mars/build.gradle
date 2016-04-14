@@ -8,8 +8,8 @@ android {
         applicationId "net.ddns.sabr.mars"
         minSdkVersion 18
         targetSdkVersion 23
-        versionCode 3
-        versionName "1.0.2"
+        versionCode 4
+        versionName "1.0.3"
     }
     buildTypes {
         release {
@@ -36,7 +36,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.6.1'
     compile 'com.sun.mail:android-mail:1.5.5'
     compile 'com.sun.mail:android-activation:1.5.5'
-    compile 'commons-io:commons-io:2.4'
-    compile 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
     compile project(path: ':backend', configuration: 'android-endpoints')
 }

@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="storesman:"
+        android:text="@string/storesman"
         android:textColor="@color/black"
         android:id="@+id/storeText"
         android:layout_alignTop="@+id/spinner"
@@ -30,7 +30,7 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/emailText"
-        android:hint="school id"
+        android:hint="@string/school_id"
         android:layout_below="@+id/spinner"
         android:layout_alignStart="@+id/storeText"
         android:layout_alignParentEnd="true" />
@@ -41,7 +41,7 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/passwordText"
-        android:hint="password"
+        android:hint="@string/password"
         android:layout_below="@+id/emailText"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true" />
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:hint="full name"
+        android:hint="@string/full_name"
         android:id="@+id/nameText"
         android:layout_alignTop="@+id/rankSpinner"
         android:layout_alignParentEnd="true" />
@@ -65,8 +65,8 @@
         android:layout_alignParentStart="true">
 
         <EditText
-            android:layout_width="wrap_content"
-            android:hint="uniform item"
+            android:layout_width="0dp"
+            android:hint="@string/uniform_item"
             android:layout_height="wrap_content"
             android:id="@+id/uniformText"
             android:layout_weight="1" />
@@ -77,7 +77,7 @@
             android:inputType="number"
             android:ems="2"
             android:id="@+id/qtyText"
-            android:hint="qty" />
+            android:hint="@string/qty" />
 
     </LinearLayout>
 
@@ -87,7 +87,7 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/reasonText"
-        android:hint="reason for order"
+        android:hint="@string/reason_for_order"
         android:layout_below="@+id/sizenText"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
@@ -95,7 +95,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Order"
+        android:text="@string/order"
         android:id="@+id/orderButton"
         android:layout_below="@+id/reasonText"
         android:layout_centerHorizontal="true" />
@@ -104,7 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/sizenText"
-        android:hint="size"
+        android:hint="@string/size"
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"

@@ -15,6 +15,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -67,7 +71,27 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setupViewPager(ViewPager viewPager,String j, String fi, String d) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+
+            case R.id.menu_prefrences:
+                Toast.makeText(getApplicationContext(), "Coming Soon...", Toast.LENGTH_SHORT).show();
+            return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void setupViewPager(ViewPager viewPager, String j, String fi, String d) {
         Bundle b = new Bundle();
         b.putString("json",j);
         MainFragment f = new MainFragment();
