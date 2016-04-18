@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.ImageView;
 
-public class NewsFragment extends Fragment{
+public class NewsFragment extends Fragment {
 
     ImageView pdfView;
 

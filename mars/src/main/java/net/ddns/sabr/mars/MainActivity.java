@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-import net.ddns.sabr.marssupport.Session;
+import net.ddns.sabr.support.Session;
 
 import java.util.ArrayList;
 import java.util.List;

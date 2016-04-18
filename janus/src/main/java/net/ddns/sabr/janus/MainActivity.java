@@ -20,7 +20,7 @@ import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.gson.Gson;
 
-import net.ddns.sabr.marssupport.Session;
+import net.ddns.sabr.support.Session;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

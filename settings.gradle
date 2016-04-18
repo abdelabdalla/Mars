@@ -1,1 +1,1 @@
-include ':mars', ':backend', ':support', ':janus'
+include ':mars', ':backend', ':janus', ':janus', ':support'
