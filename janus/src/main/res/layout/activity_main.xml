@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="@string/nco"
+        android:hint="@string/instructor"
         android:ems="10"
         android:id="@+id/ncoView"
         android:layout_below="@+id/spinner"
@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="@string/officer"
+        android:hint="@string/supervisor"
         android:ems="10"
         android:id="@+id/officerView"
         android:layout_below="@+id/ncoView"
@@ -52,7 +52,7 @@
         android:id="@+id/uniformView"
         android:layout_below="@+id/officerView"
         android:layout_alignStart="@+id/officerView"
-        android:hint="@string/uniforn"
+        android:hint="@string/uniform"
         android:layout_alignParentEnd="true" />
 
     <EditText

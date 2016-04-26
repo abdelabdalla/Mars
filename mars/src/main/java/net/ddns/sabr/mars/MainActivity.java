@@ -6,6 +6,7 @@ package net.ddns.sabr.mars;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -29,10 +30,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-   // private String json = "";
-   // private String date = "";
-    //private String file;
-
     private int theme = 0;
 
     @Override
@@ -42,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         String json = i.getExtras().getString("json");
-        String file = i.getExtras().getString("file");
+        String file = i.getExtras().getString("news");
 
 
         Gson g = new Gson();
@@ -62,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-        setupViewPager(viewPager,json,file,date);
+        setupViewPager(viewPager, json, file, date);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         assert tabLayout != null;
@@ -80,32 +77,37 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
+
+            case R.id.menu_feedback:
+                Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/forms/d/1-0qhfEBUyxC-vpn9IB9BjOshNmja009hYC-vj6jWQLY/viewform"));
+                startActivity(browser);
+                return true;
 
             case R.id.menu_prefrences:
                 Toast.makeText(getApplicationContext(), "Coming Soon...", Toast.LENGTH_SHORT).show();
-            return true;
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    private void setupViewPager(ViewPager viewPager, String j, String fi, String d) {
+    private void setupViewPager(ViewPager viewPager, String j, String n, String d) {
         Bundle b = new Bundle();
-        b.putString("json",j);
+        b.putString("json", j);
         MainFragment f = new MainFragment();
         f.setArguments(b);
 
-        Log.v("file",fi);
+        Log.v("news", n);
         Bundle b2 = new Bundle();
-        b2.putString("file",fi);
+        b2.putString("news", n);
         NewsFragment f2 = new NewsFragment();
         f2.setArguments(b2);
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(f, d);
-        adapter.addFragment(f2, "News");
+        adapter.addFragment(f2, "Notices");
         adapter.addFragment(new StoresFragment(), "Stores");
         viewPager.setAdapter(adapter);
     }

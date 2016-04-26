@@ -38,7 +38,7 @@ public class StoresFragment extends Fragment {
         spinner.setAdapter(adapter);
 
         final Spinner rankSpinner = (Spinner) root.findViewById(R.id.rankSpinner);
-        ArrayAdapter<CharSequence> rankAdapter = ArrayAdapter.createFromResource(getContext(), R.array.ranks, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> rankAdapter = ArrayAdapter.createFromResource(getContext(),R.array.ranks, android.R.layout.simple_spinner_item);
         rankAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         assert rankSpinner != null;
         rankSpinner.setAdapter(rankAdapter);
@@ -93,7 +93,7 @@ public class StoresFragment extends Fragment {
                 Message message = new MimeMessage(session);
                 message.setFrom(new InternetAddress(a[0]));
                 message.setRecipients(Message.RecipientType.TO,
-                        InternetAddress.parse(a[2].equals("0") ? "k00675@reading-school.co.uk" : "k00682@reading-school.co.uk"));
+                        InternetAddress.parse(a[2].equals("0") ? "k00682@reading-school.co.uk" : "k00675@reading-school.co.uk"));
                 message.setSubject("Stores Order");
                 // Create the message part
                 BodyPart messageBodyPart = new MimeBodyPart();

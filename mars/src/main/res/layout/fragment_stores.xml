@@ -1,121 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
     android:paddingStart="@dimen/activity_horizontal_margin"
-    android:paddingEnd="@dimen/activity_horizontal_margin">
+    android:paddingTop="@dimen/activity_vertical_margin">
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/storeText" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/storesman"
-        android:textColor="@color/black"
-        android:id="@+id/storeText"
-        android:layout_alignTop="@+id/spinner"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/emailText"
-        android:hint="@string/school_id"
-        android:layout_below="@+id/spinner"
-        android:layout_alignStart="@+id/storeText"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/passwordText"
-        android:hint="@string/password"
-        android:layout_below="@+id/emailText"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:hint="@string/full_name"
-        android:id="@+id/nameText"
-        android:layout_alignTop="@+id/rankSpinner"
-        android:layout_alignParentEnd="true" />
-
-    <LinearLayout
-        android:orientation="horizontal"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout"
-        android:layout_below="@+id/nameText"
-        android:layout_alignParentStart="true">
+        android:layout_height="match_parent">
 
-        <EditText
-            android:layout_width="0dp"
-            android:hint="@string/uniform_item"
-            android:layout_height="wrap_content"
-            android:id="@+id/uniformText"
-            android:layout_weight="1" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <EditText
+        <Spinner
+            android:id="@+id/spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="2"
-            android:id="@+id/qtyText"
-            android:hint="@string/qty" />
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/storeText" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/storeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/spinner"
+            android:text="@string/storesman"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/reasonText"
-        android:hint="@string/reason_for_order"
-        android:layout_below="@+id/sizenText"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        <EditText
+            android:id="@+id/emailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/storeText"
+            android:layout_below="@+id/spinner"
+            android:ems="10"
+            android:hint="@string/school_id"
+            android:inputType="textEmailAddress" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/order"
-        android:id="@+id/orderButton"
-        android:layout_below="@+id/reasonText"
-        android:layout_centerHorizontal="true" />
+        <EditText
+            android:id="@+id/passwordText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/emailText"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sizenText"
-        android:hint="@string/size"
-        android:layout_below="@+id/linearLayout"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:inputType="text" />
+        <EditText
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/rankSpinner"
+            android:ems="10"
+            android:hint="@string/full_name"
+            android:inputType="textPersonName"
+            android:layout_toEndOf="@+id/rankSpinner" />
 
-    <Spinner
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rankSpinner"
-        android:layout_below="@+id/passwordText"
-        android:layout_alignParentStart="true" />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/nameText"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/uniformText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/uniform_item" />
+
+            <EditText
+                android:id="@+id/qtyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="2"
+                android:hint="@string/qty"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/reasonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/sizenText"
+            android:ems="10"
+            android:hint="@string/reason_for_order"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/orderButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reasonText"
+            android:layout_centerHorizontal="true"
+            android:text="@string/order" />
+
+        <EditText
+            android:id="@+id/sizenText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/linearLayout"
+            android:hint="@string/size"
+            android:inputType="text" />
+
+        <Spinner
+            android:id="@+id/rankSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/passwordText"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:layout_toStartOf="@+id/spinner" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

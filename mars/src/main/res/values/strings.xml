@@ -10,10 +10,11 @@
     <string name="order">Order</string>
     <string name="size">size</string>
     <string name="preferences">Preferences</string>
+    <string name="feedback">Feedback</string>
 
     <string-array name="groups">
-        <item>RAF</item>
         <item>Army</item>
+        <item>RAF</item>
     </string-array>
     <string-array name="ranks">
         <item>Rct</item>

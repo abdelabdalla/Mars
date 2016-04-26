@@ -11,12 +11,17 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.Pair;
 
 import com.example.abdel.myapplication.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class SplashActivity extends AppCompatActivity {
@@ -28,20 +33,45 @@ public class SplashActivity extends AppCompatActivity {
         if(isConnected()) {
             new EndpointsAsyncTask().execute(getApplicationContext());
         } else {
-            String result = "{\n" +
-                    "  \"date\":\"31/3/2016\",\n" +
-                    "  \"entries\":[\n" +
-                    "    [\"RAF Recruits\",\"Blues\",\"Sgt T Hard\",\"MRAF Cox\",\"Drill\"],\n" +
-                    "    [\"Army Recruits\",\"MTP\",\"CSM D Sack\",\"5Lt Dorris\",\"Drill\"],\n" +
-                    "    [\"RAF Advanced\",\"Blues\",\"LCpl No '1' Cares\",\"MRAF Cox\",\"Ultilearn Stuff. In e4\"],\n" +
-                    "    [\"Army Advanced\",\"MTP\",\"FSgt L Brioche\",\"5Lt Dorris\",\"Wait for LSW's\"],\n" +
-                    "    [\"REME\",\"Blues/MTP\",\"SSgt N V Keen\",\"5Lt Dorris\",\"Presentations with Cpl A Awesome\"],\n" +
-                    "    [\"Signals\",\"Blues/MTP\",\"Cpl V Keen\",\"MRAF Cox\",\"Do something useless as usual\"]\n" +
-                    "    ]\n" +
-                    "}";
+            String json;
+            String news;
+
+            File jsonFile = new File(getApplicationContext().getFilesDir(), "json");
+            File newsFile = new File(getApplicationContext().getFilesDir(), "news");
+
+            try {
+                json = FileUtils.readFileToString(jsonFile);
+                news = FileUtils.readFileToString(newsFile);
+            } catch (Exception e) {
+                e.printStackTrace();
+               json = "{\n" +
+                        "  \"date\":\"31/3/2016\",\n" +
+                        "  \"entries\":[\n" +
+                        "    [\"RAF Recruits\",\"Blues\",\"Sgt T Hard\",\"MRAF Cox\",\"Drill\"],\n" +
+                        "    [\"Army Recruits\",\"MTP\",\"CSM D Sack\",\"5Lt Dorris\",\"Drill\"],\n" +
+                        "    [\"RAF Advanced\",\"Blues\",\"LCpl No '1' Cares\",\"MRAF Cox\",\"Ultilearn Stuff. In e4\"],\n" +
+                        "    [\"Army Advanced\",\"MTP\",\"FSgt L Brioche\",\"5Lt Dorris\",\"Wait for LSW's\"],\n" +
+                        "    [\"REME\",\"Blues/MTP\",\"SSgt N V Keen\",\"5Lt Dorris\",\"Presentations with Cpl A Awesome\"],\n" +
+                        "    [\"Signals\",\"Blues/MTP\",\"Cpl V Keen\",\"MRAF Cox\",\"Do something useless as usual\"]\n" +
+                        "    ]\n" +
+                        "}";
+                news = "<!DOCTYPE html>\n" +
+                        "<html>\n" +
+                        "<body>\n" +
+                        "\n" +
+                        "<h1>Something's wrong</h1>\n" +
+                        "\n" +
+                        "<p>" + e.getMessage() + "</p>\n" +
+                        "\n" +
+                        "</body>\n" +
+                        "</html>";
+            }
+
+            Log.v("newshere",json);
 
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            intent.putExtra("json",result);
+            intent.putExtra("json",json);
+            intent.putExtra("news",news);
             startActivity(intent);
             finish();
         }
@@ -100,11 +130,25 @@ public class SplashActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Pair<String, String> result) {
-            //Log.v("ayyy", result.second);
+
+            FileOutputStream outputStream;
+
+            try{
+                outputStream = openFileOutput("json", Context.MODE_PRIVATE);
+                outputStream.write(result.first.getBytes());
+                outputStream.close();
+
+                outputStream = openFileOutput("news", Context.MODE_PRIVATE);
+                outputStream.write(result.second.getBytes());
+                outputStream.close();
+            } catch (Exception e){
+
+            }
+
             Intent intent = new Intent(context, MainActivity.class);
             intent.putExtra("json",result.first);
             String b = result.second;
-            intent.putExtra("file",b);
+            intent.putExtra("news",b);
             startActivity(intent);
             finish();
         }

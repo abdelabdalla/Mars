@@ -12,7 +12,7 @@ public class Session {
 
     public Session(){
         this.date = "";
-        this.entries = new String[6][5];
+        this.entries = new String[7][5];
     }
 
     public void setDate(String date){

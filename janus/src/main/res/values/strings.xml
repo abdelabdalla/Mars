@@ -1,18 +1,19 @@
 <resources>
     <string name="app_name">Janus</string>
     <string name="date">Date</string>
-    <string name="nco">NCO</string>
-    <string name="officer">Officer</string>
-    <string name="uniforn">Uniforn</string>
+    <string name="instructor">Instructor</string>
+    <string name="supervisor">Supervisor</string>
+    <string name="uniform">Uniform</string>
     <string name="notes">Notes</string>
     <string name="upload">Upload</string>
 
     <string-array name="groups">
-        <item>RAF Recruits</item>
-        <item>Army Recruits</item>
-        <item>RAF Advanced</item>
+        <item>Army Basic</item>
+        <item>RAF Part 1</item>
         <item>Army Advanced</item>
-        <item>REME</item>
+        <item>RAF Advanced</item>
+        <item>NCOs</item>
         <item>Signals</item>
+        <item>R.E.M.E.</item>
     </string-array>
 </resources>

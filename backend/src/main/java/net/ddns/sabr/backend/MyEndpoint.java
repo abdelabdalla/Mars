@@ -10,10 +10,6 @@ import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 
-import net.ddns.sabr.support.Item;
-
-import java.util.ArrayList;
-
 /** An endpoint class we are exposing */
 @Api(
         name = "myApi",
@@ -48,8 +44,6 @@ public class MyEndpoint {
             "\n" +
             "</body>\n" +
             "</html>";
-
-    private ArrayList<Item> items = new ArrayList<>();
 
     @ApiMethod(name = "download")
     public Bean download() {
